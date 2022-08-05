@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+  --Softred: hsl(14, 88%, 65%);
+  --Softviolet: hsl(273, 75%, 66%);
+  --Softblue: hsl(240, 73%, 65%);
+  --Verydarkgrayishblue: hsl(237, 12%, 33%);
+  --Darkgrayishblue: hsl(240, 6%, 50%);
+  --Lightgrayishblue: hsl(240, 5%, 91%);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--Softviolet)), to(var(--Softblue)));
+  background: linear-gradient(var(--Softviolet), var(--Softblue));
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+article {
+  background: url(/images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width: 240px;
+  height: 215px;
+  position: absolute;
+  top: -110px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+}
+
+h1 {
+  font-weight: 700;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 28px;
+}
+
+details {
+  border-bottom: 1px solid var(--Lightgrayishblue);
+  padding: 1rem 0;
+}
+
+details summary, details p {
+  list-style: none;
+  color: var(--Darkgrayishblue);
+}
+
+details summary img {
+  -webkit-transition: 280ms ease;
+  transition: 280ms ease;
+}
+
+details summary.rotate img {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+details summary.rotate {
+  font-weight: 700;
+  color: var(--Verydarkdesaturatedblue);
+}
+
+details summary:hover {
+  color: var(--Softred);
+  cursor: pointer;
+}
+
+.arrow-down {
+  float: right;
+}
+
+.container {
+  background-color: #fff;
+  width: 330px;
+  margin: auto;
+  border-radius: 20px;
+  position: relative;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 920px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+    overflow: hidden;
+  }
+  article {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    background: url(/images/illustration-box-desktop.svg), url(/images/bg-pattern-desktop.svg), url(/images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 150px, contain, contain;
+    background-position: left 60%, left center, left center;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateX(-22%);
+            transform: translateX(-22%);
+    top: 0;
+    left: 0;
+  }
+  article .ilustration-mobile {
+    display: none;
+  }
+  .container-faq {
+    grid-column: 2 / -1;
+  }
+  .container-faq h1 {
+    text-align: left;
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
